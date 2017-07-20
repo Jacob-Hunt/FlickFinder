@@ -1,0 +1,21 @@
+HOW TO RUN:
+
+1. Get an api key from The Movie DB.  Instructions for this can be found 
+   here: https://www.themoviedb.org/faq/api?language=en
+
+2. Go into apiKey.py and replace "<ENTER API KEY HERE>" with your api key
+
+3. Go into config.py and replace "<ADD SECRET KEY HERE>" with a long
+   string of random characters (a random string generator is recommended
+   for this).
+
+4. Replace the main body of privacypolicy.htm with your privacy policy.
+
+5. Run locally using the command "python3 application.py".  If you wish
+   to deploy a mirror of FlickFinder on the internet, contact your
+   hosting service for instructions on how to deploy a Python Flask
+   app with them.  Note that, at present, FlickFinder will not run
+   properly on Heroku (though this should change once I migrate from
+   SQLite3 to a more deployment-friendly database framework).  I have
+   found FlickFinder to run reliably on PythonAnywhere
+   (https://www.pythonanywhere.com/) thus far.

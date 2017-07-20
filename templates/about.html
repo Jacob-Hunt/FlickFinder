@@ -1,0 +1,122 @@
+<!--
+*************************************************************
+#
+#    FlickFinder Alpha 0.2
+#    Copyright (C) 2017  Jacob Hunt (jacobhuntgit@gmail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 2,  as
+#    published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see 
+#    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+#
+**************************************************************
+-->
+
+
+{% extends "template.html" %}
+
+<!-- meta tags -->
+
+{% block title %}
+  About FlickFinder
+{% endblock %}
+
+{% block robots %}
+  index, nofollow
+{% endblock %}
+
+<!-- content -->
+
+{% block content %}
+  <div class="row vertical-center">
+    <div class="col-sm-12" style="padding-top: 60px">
+
+      <h3>About FlickFinder</h3>
+
+      <p>
+         I wrote this app as my final project for Harvard University's
+         <a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x">
+         CS50 (introduction to computer science)</a> massive-open-online-course.  The main
+         idea behind it is to alleviate the awkward and (at times) frustrating situation of
+         wanting to watch a movie with one or more people, but being unable to agree on what to watch.
+         It uses a similar design to the swipe-right/swipe-left mechanic employed by some
+         dating apps, but with a focus on picking a movie to watch (as opposed to
+         finding a date).
+      </p>
+
+      <p>
+         I'm not sure what I'm going to do with this app, but for now I'm hosting a live
+         demo of it as I continue to develop it, with the hope that others will find it
+         useful.
+      </p>
+
+      <p>
+         Also, I'm currently looking for a job in programming, web-design, or a similar field.
+         If you like my app and think you could use my skills, please feel free to contact me 
+         at jacobhuntgit@gmail.com.
+      </p>
+
+      <p>
+         Peace, love, and penguins,<br />
+         -Jacob Hunt
+      </p>
+
+      <hr />
+      <hr />
+
+      <p>
+          FlickFinder software and logo is &copy Copyright 2017 Jacob Hunt under a
+          <a href="{{ url_for('static', filename='LICENSE.txt') }}" target="_blank">GPL Version 2</a> 
+          open-source license, with the exception of third-party libraries, APIs, or
+          other tools which the author (Jacob Hunt) has not written (and therefore does
+          not own the rights to), but has used in the creation of this app (the use and
+          distribution of these tools falls under the licenses assigned to them by the
+          relevant copyright holders -- see below for details).  The FlickFinder GitHub
+          repository can be found at <a href="https://github.com/Jacob-Hunt/FlickFinder">
+          https://github.com/Jacob-Hunt/FlickFinder</a>.
+      </p>
+
+      <hr />
+
+      <p>
+          <strong>DISCLAIMER.</strong> THIS SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OR CONDITION,
+          EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+          A PARTICULAR PURPOSE AND NONINFRINGEMENT. LICENSORS HEREBY DISCLAIM ALL LIABILITY, WHETHER IN
+          AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE.
+      </p>
+
+      <hr />
+
+      <p>
+          <strong>Third-party tools used to create this app (and links to associated licenses):</strong><br />
+          Python -- Site: https://www.python.org/ -- License: https://docs.python.org/3/license.html<br />
+          Flask -- Site: http://flask.pocoo.org/ -- License: https://flask-doc.readthedocs.io/en/latest/license.html<br />
+          SQLAlchemy -- Site: https://www.sqlalchemy.org/ -- License: MIT License -- https://opensource.org/licenses/mit-license.html<br />
+          SQLite -- Site: https://www.sqlite.org/ -- License: Public Domain -- https://www.sqlite.org/copyright.html<br />
+          Bootstrap -- Site: https://getbootstrap.com/ -- License: https://v4-alpha.getbootstrap.com/about/license/<br />
+          jQuery -- Site: https://jquery.com/ -- License: https://jquery.org/license/<br />
+          jQuery confirm -- Site: https://craftpip.github.io/jquery-confirm/ -- License: https://github.com/craftpip/jquery-confirm/blob/master/LICENSE<br />
+          Ajaxload -- Site: http://www.ajaxload.info/ -- License: http://www.wtfpl.net/<br />
+          Font Awesome -- Site: http://fontawesome.io/ -- License: MIT License -- https://opensource.org/licenses/mit-license.html<br />
+          Animate.css -- Site: https://daneden.github.io/animate.css/ -- License: https://github.com/daneden/animate.css/blob/master/LICENSE<br />
+          Bootstrap-Select -- Site: https://silviomoreto.github.io/bootstrap-select/ -- License: https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE<br />
+          The Movie Database -- Site: https://www.themoviedb.org/documentation/api -- License: https://www.themoviedb.org/documentation/api/terms-of-use<br />
+      </p>
+
+      <hr />
+
+      <p>
+         This product uses the TMDb API but is not endorsed or certified by TMDb.
+      </p>
+
+
+  </div>
+{% endblock %}

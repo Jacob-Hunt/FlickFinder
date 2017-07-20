@@ -1,0 +1,108 @@
+<!--
+*************************************************************
+#
+#    FlickFinder Alpha 0.2
+#    Copyright (C) 2017  Jacob Hunt (jacobhuntgit@gmail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 2,  as
+#    published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see 
+#    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+#
+**************************************************************
+-->
+
+
+{% extends "template.html" %}
+
+<!-- meta tags -->
+
+{% block title %}
+  How To Use FlickFinder
+{% endblock %}
+
+{% block robots %}
+  index, nofollow
+{% endblock %}
+
+<!-- content -->
+
+{% block content %}
+  <div class="row vertical-center">
+    <div class="col-sm-12" style="padding-top: 60px">
+
+      <h3>How to use FlickFinder:</h3>
+
+      <ol>
+        <li>
+          Sign up for an account.  Note that, at this point, you won't receive a confirmation email (or any other kind of
+          notification that your sign-up was successful), but if you're redirected to the front-page login, your sign up
+          was probably successful.  If you were redirected to the registration page, your sign up was probably unsuccessful.
+          If in doubt, try logging in and see what happens.
+        </li><br />
+        <li>
+          Log in.
+        </li><br />
+        <li>
+          Click or tap on "Add Friends"
+        </li><br />
+        <li>
+          Send a friend request to someone you want to watch a movie with.  Note that, if you send a friend request using
+          a friend's email address, this will not spam their email folder, and the friend request will only be sent if
+          they already have a FlickFinder account.  If your friend has sent you a friend request, click/tap on "Reply to Friend
+          Requests" and accept their friend request.
+        </li><br />
+        <li>
+          Click or tap on the FlickFinder logo in the upper-left corner to return to the front menu.  Note that, while I
+          am planning on adding a "back" button at some point in the near-future, clicking on the FlickFinder logo is the
+          only way to go back right now.
+        </li><br />
+        <li>
+          Click or tap on New Movie Night button.
+        </li><br />
+        <li>
+          Select your friend's name from the dropdown menu that comes up.  Click on "Invite" if you want to watch a movie
+          with them.  Repeat this process for as many friends as you want (for instance, if you're planning on watching
+          a movie with a group of friends).  Click "Next" when you're done.
+        </li><br />
+        <li>
+          Select the genres to include in the movie search.  Note that, at this point, the search will only return movies
+          that include all the genres you've selected (for example, selecting "Animated" and "Documentaries" will only
+          return animated documentaries, and not animated films which are not documentaries or documentaries which are
+          not animated); this is a bug which I am hoping to fix in the near future.  Click "Next" when you're done selecting.
+        </li><br />
+        <li>
+          Have your friend(s) go to the front page and click/tap on "My Movie Nights."  They can then select the FlickFinder session
+          from the menu that comes up.  They should then click or tap on "Go."
+        </li><br />
+        <li>
+          Everyone in your group will be shown movie suggestions, along with descriptions of the movies and related information.
+          You can then click or tap "Thumbs Up" or "Thumbs Down" to indicate weather or not you would be interested in watching
+          the movie.  Note that clicking/tapping on "View Results" does nothing at this point.
+        </li><br />
+        <li>
+          When everyone in your group wants to watch the same thing, FlickFinder will notify you.  Note that, at this point,
+          only the last person to vote "Thumbs Up" will be notified (though I am hoping to change this in the near future).
+        </li><br />
+        <li>
+          Continue rating movies if you feel like it.  Every time there's a match, the last person to vote "Thumbs Up" will
+          be notified.  Note that, if you run through all the movies in your search results, the app will stop working, but
+          you can click on the FlickFinder logo in the upper-right corner to refresh the app and start a new movie night.
+        </li><br />
+        <li>
+          That's it for now!  This app is still very much a work-in-progress.  There are important features (such as being
+          able to change your password or delete your account) which I have not yet added.  You will likely encounter
+          strange bugs, and I can't promise that your account won't mysteriously delete itself (or, more likely, get accidentally
+          deleted when I update the app's codebase).  You can email me at jacobhuntgit@gmail.com with any questions or bug
+          reports.  Happy watching!
+        </li>
+      </ol>
+{% endblock %}

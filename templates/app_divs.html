@@ -1,0 +1,287 @@
+<!--
+*************************************************************
+#
+#    FlickFinder Alpha 0.2
+#    Copyright (C) 2017  Jacob Hunt (jacobhuntgit@gmail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 2,  as
+#    published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see 
+#    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+#
+**************************************************************
+-->
+
+
+<!-- LOADING GIF -->
+<div id="ajax-loader" align="center">
+    <img src="{{ url_for('static', filename='ajax-loader.gif') }}" alt="Loading..." />
+</div>
+
+<!-- FRONT PAGE -->
+<div id="fp" class="invisible">
+
+  <!-- LOGO -->
+  <div id="app-logo">
+    <div class="col-sm-5 hidden-xs" align="right">
+      <!-- logo image -->
+      <img src="static/logo.png" id="app-logo-img" alt="popcorn logo" />
+    </div><!-- /col-sm-5 -->
+    <div class="col-sm-7">
+      <div id="cover-logo-text">
+        <h1>Flickfinder!</h1>
+        <h4>It helps you pick the things!</h4><br />
+      </div><!-- /cover-logo-text -->
+    </div><!-- /col-sm-7 -->
+  </div><!-- /app-logo -->
+
+  <!-- FRONT PAGE BUTTONS -->
+  <div class=row>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div id="fp_buttons" class="form-gorup" align="center">
+        <button type="button" onclick="fp_btnNew()" class="btn btn-lg btn-block btn-warning margin-x-5px">New Movie Night</button>
+        <button type="button" onclick="fp_btnMovieNights()"class="btn btn-lg btn-block btn-warning margin-x-5px">My Movie Nights</button>
+        <button type="button" onclick="fp_btnInvite()" class="btn btn-lg btn-block btn-warning margin-x-5px">Add Friends</button>
+        <button type="button" onclick="tut_open()" class="btn btn-lg btn-block btn-warning margin-x-5px">Tutorial</button>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+
+</div>
+
+
+<!-- FRIEND REQUESTS PAGE -->
+
+<div id="fr" class="invisible">
+
+  <div class="col-sm-4"></div>  
+  <div class="col-md-4" id="middle-column">
+    <form class="form-horizontal"> 
+      <div class="form-group" id="fr_add">
+        <label class="control-label" for="fr_add">Add friends:</label>
+        <input type="text" class="form-control" name="fr_addField" placeholder="@username or email">
+      </div>
+    </form>
+    <div id="fr_addBtn">
+        <button onclick="fr_sendRequest()" class="btn btn-lg btn-warning btn-block">Send Friend Request</button>
+        <button onclick="fr_btnView()" class="btn btn-lg btn-warning btn-block">Reply to Friend Requests</button>
+        <button onclick="fr_btnBack()" class="btn btn-lg btn-warning btn-block">Back</button>
+    </div>
+    <div id="messageBox" style="display:none" class="black-text"></div>
+  </div>
+  <div class="col-sm-4"></div>
+  </div>
+
+</div>
+
+
+<!-- FRIEND REQUEST RESPONSE PAGE -->
+
+<div id="frr" class="invisible">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" id="middle-column">
+    <div class="row">
+      <div class="col-12">
+        <div id="frr-selectBox" class="textbox-black-white">
+          <form>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="frr_btnAccept">
+          <button type="button" onclick="fr_accept()" class="btn btn-lg btn-block btn-success margin-x-5px">Accept</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="frr_btnReject">
+          <button type="button" onclick="fr_del()" class="btn btn-lg btn-block btn-danger margin-x-5px">Decline</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="frr_btnBack">
+          <button type="button" onclick="frr_btnBack()" class="btn btn-lg btn-block btn-warning margin-x-5px">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+
+</div>
+
+<!-- MY MOVIE NIGHTS PAGE -->
+
+<div id="my" class="invisible">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" id="middle-column">
+    <div class="row">
+      <div class="col-12">
+        <div id="my-selectBox" class="textbox-black-white">
+          <form>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="my_btnCont">
+          <button type="button" onclick="my_resume()" class="btn btn-lg btn-block btn-success margin-x-5px">Go</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="my_btnDel">
+          <button type="button" onclick="my_del()" class="btn btn-lg btn-block btn-danger margin-x-5px">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="my_btnBack">
+          <button type="button" onclick="my_btnBack()" class="btn btn-lg btn-block btn-warning margin-x-5px">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+
+</div>
+
+<!-- NEW MOVIE NIGHT | INVITE FRIENDS PAGE -->
+
+<div id="nw_invites" class="invisible">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-3">
+    <div id="nw_form-1">
+      <form>
+        <select name="nw_friends-list" id="nw_friends-list" title="Invite friends...">
+        </select>
+      </form>
+      <div id="nw-addbox" class="textbox-black-white">
+        <p>Friends added:</p>
+        <ol></ol>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <div id="nw_invite-btn">
+      <button type="button" onclick="nw_btnAdd()" class="btn btn-lg btn-warning margin-x-5px">Invite</button>
+    </div>
+    <div id="nw_genre-btn">
+      <button type="button" onclick="nw_btnGenres()" class="btn btn-lg btn-warning margin-x-5px">Next</button>
+    </div>
+    <div id="nw_back-btn">
+      <button type="button" onclick="nw_btnBack()" class="btn btn-lg btn-warning margin-x-5px">Back</button>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+
+</div>
+
+<!-- NEW MOVIE NIGHT | GENRE PREFERENCES PAGE -->
+
+<div id="nw_genres" class="invisible">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="row">
+      <div id="nw_genre-form" class="textbox-black-white">
+        <form>
+          <input type="checkbox" name="genres" value="AUTO">Automatically Detect My Preferences (not yet implimented)<br />
+          --------------------------<br />
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div id="nw_genre-buttons" align="center">
+        <button type="button" onclick="nw_btnStart()" class="btn btn-lg btn-warning margin-x-5px">Start</button>
+        <button type="button" onclick="nw_genresBtnBack()" class="btn btn-lg btn-warning margin-x-5px">Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+
+</div>
+
+<!-- MAIN MOVIE NIGHT INTERFACE -->
+
+<div id="mn" class="invisible">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="row">
+      <div id="mn_poster" align="center"></div>
+    </div>
+    <div class="row">
+      <div id="mn_info" class="textbox-black-white"></div>
+    </div>
+    <div class="row">
+      <div id="mn_buttons" class="form-group" align="center">
+        <div class="col-xs-6">
+          <button type="button" onclick="mn_btnThumbsDown()" class="btn btn-lg btn-block btn-danger margin-x-5px">
+            <i class="fa fa-lg fa-thumbs-down" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="col-xs-6">
+          <button type="button" onclick="mn_btnThumbsUp()" class="btn btn-lg btn-block btn-success margin-x-5px">
+            <i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i>
+          </button>
+        </div>
+        <button type="button" onclick="mn_viewMatches()" class="btn btn-lg btn-block btn-warning margin-x-5px">
+          View Matches
+        </button>
+        <button type="button" onclick="mn_exit(fp_init)" class="btn btn-lg btn-block btn-warning margin-x-5px">
+          Main Menu
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+
+</div>
+
+<!-- MOVIE NIGHT MATCH LIST INTERFACE -->
+
+<div id="ml">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+
+    <div class="row">
+      <div id="ml_list" class="textbox-black-white">
+        <ul class="nav nav-pills nav-stacked" role="tablist">        
+        </ul>
+      </div>
+    </div> <!-- END OF TOP ROW -->
+
+    <div class="row">
+      <button type="button" onclick="vm_btnBack()" class="btn btn-lg btn-block btn-danger margin-x-5px">
+          Back
+      </button>
+    </div> <!-- END OF BOTTOM ROW -->
+
+  </div>
+  <div class="col-sm-4"></div>
+
+  <div id='matchInfoBox' style='display:none'></div>
+
+</div>

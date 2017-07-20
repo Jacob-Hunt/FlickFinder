@@ -1,0 +1,130 @@
+<!--
+*************************************************************
+#
+#    FlickFinder Alpha 0.2
+#    Copyright (C) 2017  Jacob Hunt (jacobhuntgit@gmail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 2,  as
+#    published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see 
+#    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+#
+**************************************************************
+-->
+
+{% extends "template.html" %}
+
+<!-- meta tags -->
+
+{% block title %}
+  Flickfinder: it helps you pick the things!
+{% endblock %}
+
+{% block robots %}
+  index, nofollow
+{% endblock %}
+
+<!-- content -->
+
+{% block content %}
+  <div class="row vertical-center">
+    <div class="col-xs-12">
+      <div id="register-logo">
+        <div class="col-sm-5 hidden-xs" align="right">
+          <!-- logo image -->
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="popcorn logo" />
+        </div>
+        <div class="col-sm-7">
+          <!-- logo text -->
+          <div id="cover-logo-text">
+            <h1>Flickfinder!</h1>
+            <h4>It helps you pick the things!</h4><br />
+          </div>
+        </div>
+      </div>
+      <!-- registration form -->
+      <form action="{{ url_for('register') }}" class="form-horizontal" method="post">
+        <div class="form-group">
+          <label class="control-label col-md-2" for="first">First name</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="first" placeholder="First name">
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-2" for="last">Last name</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="last" placeholder="Last name">
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-2" for="email">Email:</label>
+            <div class="col-md-10">
+              <input type="email" class="form-control" name="email" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-2" for="user">Username:</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="user" placeholder="Enter username">
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-2" for="pwd">Password:</label>
+          <div class="col-md-10">
+            <input type="password" class="form-control" name="pwd" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-2" for="confirm">Confirm password:</label>
+          <div class="col-md-10">
+            <input type="password" class="form-control" name="confirm" placeholder="Confirm password">
+          </div>
+        </div>
+        <div id="register-warning" class="textbox-black-white">
+          <div id="register-warning-header" align="center"><h2><strong>DISCLAIMER</strong></h2></div>
+          <p>
+             THIS APP IS STILL UNDER DEVELOPMENT, AND SOME SECURITY FEATURES
+             HAVE NOT YET BEEN IMPLIMENTED.  IT IS THEREFORE STRONGLY RECOMMENDED
+             THAT YOU DO NOT USE THE SAME PASSWORD FOR THIS APP AS ONE WHICH YOU
+             USE FOR OTHER PURPOSES.
+          </p>
+          <p>
+             Also, as this app is still under development, not all bugs have been
+             fixed.  If you encounter any errors, you may notify the developer
+             via email at jacobhuntgit@gmail.com.  The creator of FlickFinder 
+             makes no guarantees as to the reliability or security of this site.
+             As the app continues to be developed, it is likely that the database
+             will be reset on occasion and all user data will be lost (resulting
+             in the need to re-register in order to continue using the app).
+          </p>
+
+          <p>
+            THIS SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OR CONDITION,
+            EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+            A PARTICULAR PURPOSE AND NONINFRINGEMENT. LICENSORS HEREBY DISCLAIM ALL LIABILITY, WHETHER IN
+            AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE.
+          </p>
+
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <div class="textbox-black-white" style="margin-top: 15px">
+            <p>By registering, you agree to the terms of the <a href="{{ url_for('privacy') }}">FlickFinder Privacy Policy</a></p>
+          </div>
+          <div class="form-group" style="margin-top: 15px" align="center">
+            <button type="submit" class="btn btn-lg btn-block btn-warning">Sign Up</button>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

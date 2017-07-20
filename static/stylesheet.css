@@ -1,0 +1,300 @@
+/*********************************************************************
+ *
+ *   FlickFinder Alpha 0.2
+ *   Copyright (C) 2017  Jacob Hunt (jacobhuntgit@gmail.com)
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License version 2,  as
+ *   published by the Free Software Foundation.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see 
+ *   https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+ *
+ *********************************************************************/
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+
+/* images
+-------------------------------------------------- */
+.content {
+  background-image: url('background.jpeg');
+  background-size: 100%;
+}
+
+
+/* padding, margins, borders
+-------------------------------------------------- */
+body > .container {
+  padding: 60px 15px 0;
+  margin-top: 60px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+}
+
+.margin-x-5px {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.textbox-black-white{
+  padding: 5px;
+}
+
+.no-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#tmdb-logo {
+  position: absolute;
+  bottom: 0;
+}
+
+#cover-carousel {
+  border-color: #180000;
+  border-style: solid;
+  border-width: 140px 30px 140px 30px;
+}
+
+#register-logo {
+  margin-top: 60px;
+}
+
+#mn {
+  margin-top: 60px;
+}
+
+#ml {
+  margin-top: 60px;
+}
+
+
+/* Alignment
+-------------------------------------------------- */
+
+/* 
+   The following code is from this stackoverflow
+   question:
+
+   https://stackoverflow.com/questions
+   /22196587/how-to-center-align-vertically-
+   the-container-in-bootstrap
+*/
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.vertical-align-top {
+  padding-top: 90px;
+}
+
+/*
+   end of stackoverflow code
+*/
+
+#my-selectBox {
+  margin-bottom: 10px;
+}
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  #cover-logo-text {
+    text-align: left;
+  }
+
+  .col-centered-sm{
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+/* phones */
+@media (max-width: 767px) {
+  #cover-logo-text {
+    text-align: center;
+  }
+
+  .col-centered-xs{
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+
+/* Colors
+-------------------------------------------------- */
+body {
+  background-color: #000000;
+}
+
+ol {
+  color: #FFFFFF;
+}
+
+#cover-container {
+  background-color: #000020;
+}
+
+.navbar, .navbar-default, .navbar-fixed-top {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.content {
+  background-color: #000000;
+}
+
+.footer {
+  background-color: #000000;
+}
+
+#bootstrap-override-nav-logo > a {
+  color: #E59900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #E59900;
+}
+
+p {
+  color: #ffffff;
+}
+
+.form-group {
+  color: #ffffff;
+}
+
+.btn {
+  color: #000000;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.black-text {
+  color: #000000 !important;
+}
+
+.textbox-black-white{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#register-warning-header > h2 {
+  color: #FF0000;
+}
+
+#app-logo-img {
+  background-color: #000000;
+}
+
+#nw-addbox {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#messageBox > h1 {
+  color: #000;
+}
+
+/* Dimensions
+-------------------------------------------------- */
+#mn_info {
+  overflow-y: scroll;
+  width: 100%;
+  height: 120px;
+}
+
+#mn_poster {
+  height: 278px;
+}
+
+#nw_genre-form {
+  overflow-y: scroll;
+  width: 100%;
+  height: 200px;
+}
+
+#my-selectBox {
+  overflow-y: scroll;
+  width: 100%;
+  height: 200px;
+}
+
+#ml_list {
+  overflow-y: scroll;
+  width: 100%;
+  height: 300px;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+/* Fonts
+-------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Shrikhand', cursive;
+}
+
+.nav-logo {
+  font-family: 'Shrikhand', cursive;
+  font-size: 30px;
+}
+
+#cover-logo-text > h1 {
+  font-size: 45px;
+}
+
+#messageBox > h1 {
+  font-family: 'Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+}
+
+
+/* Borders
+-------------------------------------------------- */
+#app-logo-img {
+  border-radius: 10px;
+}

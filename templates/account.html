@@ -1,0 +1,101 @@
+<!--
+*************************************************************
+#
+#    FlickFinder Alpha 0.2
+#    Copyright (C) 2017  Jacob Hunt (jacobhuntgit@gmail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 2,  as
+#    published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see 
+#    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+#
+**************************************************************
+-->
+
+
+{% extends "template.html" %}
+
+<!-- meta tags -->
+
+{% block title %}
+  FlickFinder | Account Settings
+{% endblock %}
+
+{% block robots %}
+  index, nofollow
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='account_settings.js') }}"></script>
+{% endblock %}
+
+<!-- content -->
+
+{% block content %}
+
+  <div class="row vertical-center">
+    <div class="col-xs-12">
+      <div id="register-logo">
+        <div class="col-sm-5 hidden-xs" align="right">
+          <!-- logo image -->
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="popcorn logo" />
+        </div>
+        <div class="col-sm-7">
+          <!-- logo text -->
+          <div id="cover-logo-text">
+            <h1>Flickfinder!</h1>
+            <h4>It helps you pick the things!</h4><br />
+          </div>
+        </div>
+      </div>
+      <!-- registration form -->
+      <form onsubmit="event.preventDefault()" class="form-horizontal" method="post">
+        <div class="form-group row">
+          <label class="control-label col-md-2" for="confirm">New Password</label>
+          <div class="col-md-10">
+            <input type="password" class="form-control" name="pwdNew" placeholder="New password">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="control-label col-md-2" for="confirm">New Password (again)</label>
+          <div class="col-md-10">
+            <input type="password" class="form-control" name="pwdNewConfirm" placeholder="Confirm new password">
+          </div>
+        </div>
+        <div class="row">
+          <div class=col-sm-4></div>
+          <div class=col-sm-4><hr /></div>
+          <div class=col-sm-4></div>
+        </div>
+        <div class="form-group row">
+          <label class="control-label col-md-2" for="pwd">Current Password<b style="color: red; font-size: 1.2em;">*</b></label>
+          <div class="col-md-10">
+            <input type="password" class="form-control" name="pwdCurrent" placeholder="Current Password (required)" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3">
+            <div class="form-group" style="margin: 15px; margin-top: 3px;" align="center">
+              <button onclick="changePassword()" class="btn btn-lg btn-block btn-warning">Change Password</button>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group" style="margin: 15px; margin-top: 3px;" align="center">
+              <button onclick="deleteAccount()" class="btn btn-lg btn-block btn-warning">Delete Account</button>
+            </div>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
