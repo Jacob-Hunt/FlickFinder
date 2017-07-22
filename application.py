@@ -36,8 +36,6 @@ from movienight_scripts import *
 
 def main():
 
-    print("API_KEY: " + API_KEY)
-
     # run server
     app.run(host = os.getenv('IP', server_address),
             port = int(os.getenv('PORT', port_number)))
