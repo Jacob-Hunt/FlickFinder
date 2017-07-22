@@ -7,8 +7,13 @@ For deployment instructions, read HOW_TO_RUN.txt.  If you want to play with a li
 # TODO
 
 -Refine aesthetics and layout (CSS, etc.)
+
 -Migrate from SQLite3 to PostgreSQL and/or MongoDB
+
 -Impliment recommendation engine based on voting history
+
 -Add "remember me" checkbox to login screen
+
 -Automatically log user in upon registration
+
 -Review and improve code design/layout (split long functions into smaller ones, limit line-length to 72 chars, etc.)
