@@ -17,3 +17,5 @@ For deployment instructions, read HOW_TO_RUN.txt.  If you want to play with a li
 -Automatically log user in upon registration
 
 -Review and improve code design/layout (split long functions into smaller ones, limit line-length to 72 chars, etc.)
+
+-Change text of howto.html to reflect current update
